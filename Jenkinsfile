@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Checkout Code') {
             steps {
-                git 'https://github.com/KyathamRohith/java-application.git'
+                git branch: 'main', 'https://github.com/KyathamRohith/java-application.git'
             }
         }
 
