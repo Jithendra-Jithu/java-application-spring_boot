@@ -38,13 +38,15 @@ pipeline {
             steps {
                 script {
                     // Login to Docker Hub using Jenkins credentials
-                    withCredentials([credentialsId: DOCKER_CREDENTIALS, url: 'https://index.docker.io/v1/']) {
-                 
-                    // Push the Docker image to the Docker Hub repository
-                    sh "docker push ${DOCKER_IMAGE}"
+                    withCredentials([usernamePassword(credentialsId: DOCKER_CREDENTIALS, passwordVariable: 'DOCKER_PASSWORD', usernameVariable: 'DOCKER_USERNAME')]) {
+                        // Login to Docker Hub (no need to specify the registry URL, it's the default)
+                        sh "docker login -u ${DOCKER_USERNAME} -p ${DOCKER_PASSWORD}"
+                        
+                        // Push the Docker image to the Docker Hub repository
+                        sh "docker push ${DOCKER_IMAGE}"
+                    }
                 }
             }
         }
-    }                                
-}
+    }
 }
