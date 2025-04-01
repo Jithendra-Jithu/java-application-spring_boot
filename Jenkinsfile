@@ -29,7 +29,7 @@ pipeline {
             steps {
                 script {
                     // Build Docker image
-                    sh "sudo docker build -t ${DOCKER_IMAGE} ."
+                    sh "docker build -t ${DOCKER_IMAGE} ."
                 }
             }
         }
@@ -49,10 +49,5 @@ pipeline {
         }
     }
 
-    post {
-        // Clean up Docker images to free up space after the pipeline runs
-        always {
-            sh 'docker system prune -f'
-        }
-    }
+    
 }
