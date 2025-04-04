@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         DOCKER_IMAGE = 'rohith1305/java-application:latest'
-        DOCKER_CREDENTIALS = '7c910bc4-e2e4-48a4-857c-51be93277e96'  // Jenkins Credentials ID for Docker login
+        DOCKER_CREDENTIALS = 'fb16b1ba-d2e9-41bb-8654-d00d3b5b61e6'  // Jenkins Credentials ID for Docker login
     }
 
     stages {
@@ -11,7 +11,7 @@ pipeline {
             steps {
                 script {
                     // Checkout the code from GitHub repository
-                    git branch: 'main', url: 'https://github.com/KyathamRohith/java-application.git'
+                    git branch: 'main', url: 'https://github.com/Jithendra-Jithu/java-application.git'
                 }
             }
         }
