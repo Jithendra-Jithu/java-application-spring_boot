@@ -11,7 +11,8 @@ pipeline {
             steps {
                 script {
                     // Checkout the code from GitHub repository
-                    git branch: 'main', url: 'https://github.com/Jithendra-Jithu/java-application.git'
+                    git branch: 'main', url: 'git@github.com:Jithendra-Jithu/java-application.git
+'
                 }
             }
         }
