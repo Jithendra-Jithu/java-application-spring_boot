@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_IMAGE = 'rohith1305/java-application:latest'
+        DOCKER_IMAGE = 'jithu145/java-application:latest'
         DOCKER_CREDENTIALS = 'fb16b1ba-d2e9-41bb-8654-d00d3b5b61e6'  // Jenkins Credentials ID for Docker login
     }
 
